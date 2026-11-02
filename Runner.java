@@ -13,13 +13,25 @@ public class Runner {
             int missed;       // Number of questions missed
 
             // Get the number of questions on the exam
-            input = JOptionPane.showInputDialog("How many questions are on the exam?");
-            questions = Integer.parseInt(input);
+            try{
+                 input = JOptionPane.showInputDialog("How many questions are on the exam?");
+                 questions = Integer.parseInt(input);
 
-            // Get the number of questions the student missed
-            input = JOptionPane.showInputDialog("How many questions did the student miss?");
-            missed = Integer.parseInt(input);
+            }catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(null, "Please enter a valid number.");
+                return;
+            }
+           
+            // Get the number of questions the student mAissed
+            try{
+                input = JOptionPane.showInputDialog("How many questions did the student miss?");
+                 missed = Integer.parseInt(input);
 
+            }catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(null, "Please enter a valid number.");
+                return;
+            }
+            
             // Create an Exam object
             Exam exam = new Exam(questions, missed);
 
