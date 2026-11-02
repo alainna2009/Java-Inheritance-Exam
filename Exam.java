@@ -15,15 +15,12 @@ public  class Exam extends Assessment {
 
 
         //calculate points per person
-        try{
-
             pointsEach = 100 / questions;
+
+
         //calculate the final score 
             setScore (100 -(missed * pointsEach));
-        } catch (ArithmeticException e ){
-            System.out.println("Error: Cannot divide by zero. ");
-            throw e;
-        }
+            
         //stores the score using the inherited setScore() method 
     }
     public int getPointsEach(){
